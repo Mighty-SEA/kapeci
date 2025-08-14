@@ -8,7 +8,10 @@
 	</head>
 	<body class="min-h-dvh grid place-items-center bg-gradient-to-br from-sky-50 to-indigo-50">
 		<div class="w-full max-w-md rounded-2xl bg-white/80 p-8 shadow-xl ring-1 ring-gray-200 backdrop-blur">
-			<h1 class="mb-6 text-center text-2xl font-bold tracking-tight">Masuk Admin</h1>
+			<div class="flex flex-col items-center mb-8">
+				<img src="{{ asset('logo.png') }}" alt="Logo" class="h-20 w-20 mb-4">
+				<h2 class="text-xl font-bold text-gray-900">SMA KP CIWIDEY</h2>
+			</div>
 			@if ($errors->any())
 				<div class="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-700">
 					{{ $errors->first() }}
@@ -18,11 +21,11 @@
 				@csrf
 				<div>
 					<label class="mb-1 block text-sm font-medium">Username</label>
-					<input type="text" name="username" value="{{ old('username') }}" placeholder="Username atau Email" autocomplete="username" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" required />
+					<input type="text" name="username" value="{{ old('username') }}" placeholder="Username atau Email" autocomplete="username" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-lg py-3" required />
 				</div>
 				<div>
 					<label class="mb-1 block text-sm font-medium">Password</label>
-					<input type="password" name="password" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" required />
+					<input type="password" name="password" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-lg py-3" required />
 				</div>
 				<div class="flex items-center justify-between">
 					<label class="flex items-center gap-2 text-sm">

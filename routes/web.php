@@ -23,8 +23,10 @@ Route::middleware('auth')->group(function () {
 
 	Route::prefix('admin')->name('admin.')->group(function () {
 		Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+		// bulk destroy harus didefinisikan sebelum resource untuk menghindari bentrok dengan {siswa}
+		Route::delete('siswa/bulk-destroy', [StudentController::class, 'bulkDestroy'])->name('siswa.bulk-destroy');
 		Route::resource('siswa', StudentController::class)->parameters([
 			'siswa' => 'siswa'
-		])->names('siswa');
+		])->names('siswa')->whereNumber('siswa');
 	});
 });

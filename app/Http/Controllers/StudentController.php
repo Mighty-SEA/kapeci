@@ -55,6 +55,18 @@ class StudentController extends Controller
 		return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil dihapus.');
 	}
 
+	public function bulkDestroy(Request $request)
+	{
+		$validated = $request->validate([
+			'ids' => ['required', 'array'],
+			'ids.*' => ['integer', 'exists:students,id'],
+		]);
+
+		Student::whereIn('id', $validated['ids'])->delete();
+
+		return redirect()->route('admin.siswa.index')->with('success', 'Data siswa terpilih berhasil dihapus.');
+	}
+
 	private function validateData(Request $request, ?int $ignoreId = null): array
 	{
 		$uniqueNipd = 'unique:students,nipd';
