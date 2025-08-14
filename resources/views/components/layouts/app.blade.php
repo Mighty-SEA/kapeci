@@ -16,7 +16,7 @@
 		<div class="min-h-dvh">
 			<div class="flex min-h-dvh">
 				<!-- Sidebar -->
-				<aside class="hidden w-64 shrink-0 bg-gradient-to-b from-slate-900 to-slate-800 shadow-xl md:block">
+				<aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 shrink-0 bg-gradient-to-b from-slate-900 to-slate-800 shadow-xl transform -translate-x-full transition-transform duration-200 md:relative md:translate-x-0 md:block">
 					<div class="flex h-full flex-col">
 						<!-- Logo/Brand -->
 						<div class="flex items-center gap-3 px-6 py-6">
@@ -56,6 +56,8 @@
 						</nav>
 					</div>
 				</aside>
+				<!-- Overlay for mobile -->
+				<div id="sidebarOverlay" class="hidden fixed inset-0 z-30 bg-black/40 md:hidden"></div>
 
 				<!-- Main Content -->
 				<div class="flex min-w-0 flex-1 flex-col">
@@ -64,7 +66,7 @@
 						<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
 							<!-- Mobile Menu Button + Title -->
 							<div class="flex items-center gap-4">
-								<button class="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 md:hidden">
+								<button id="mobileMenuButton" class="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 md:hidden">
 									<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 									</svg>
@@ -106,15 +108,14 @@
 									</form>
 								</div>
 							</div>
-						</div>
-					</header>
+						</header>
 
-					<!-- Main Content Area -->
-					<main class="mx-auto w-full max-w-7xl flex-1 px-6 py-6">
-						{{ $slot }}
-					</main>
+						<!-- Main Content Area -->
+						<main class="mx-auto w-full max-w-7xl flex-1 px-6 py-6">
+							{{ $slot }}
+						</main>
+					</div>
 				</div>
 			</div>
-		</div>
-	</body>
+		</body>
 </html> 
