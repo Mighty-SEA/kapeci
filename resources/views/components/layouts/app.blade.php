@@ -83,6 +83,8 @@
 									</svg>
 								</button>
 
+								<a href="{{ route('account.settings') }}" class="rounded-lg bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-200 transition-all hover:bg-slate-100">Pengaturan</a>
+
 								<!-- User Avatar & Logout -->
 								<div class="flex items-center gap-3 pl-3 border-l border-gray-200">
 									<div class="hidden sm:block text-right">

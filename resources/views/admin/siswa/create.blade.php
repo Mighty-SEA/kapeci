@@ -33,22 +33,22 @@
 		@endif
 
 		<!-- Form -->
-		<form method="POST" action="{{ route('admin.siswa.store') }}" class="space-y-6">
+		<form method="POST" action="{{ route('admin.siswa.store') }}" class="space-y-8">
 			@csrf
 			
 			<!-- Data Pribadi -->
-			<div class="bg-white rounded-lg border border-gray-200 shadow-sm">
-				<div class="border-b border-gray-200 bg-gray-50 px-4 py-3 rounded-t-lg">
+			<div class="bg-white rounded-xl border-2 border-indigo-200/70 shadow-md ring-2 ring-indigo-300/60 ring-offset-1 ring-offset-white">
+				<div class="border-b border-gray-200 bg-gray-50 px-8 py-5 rounded-t-lg">
 					<h3 class="text-sm font-medium text-gray-900">Data Pribadi</h3>
 				</div>
-				<div class="p-4 grid gap-4 sm:grid-cols-2">
+				<div class="p-8 grid gap-6 sm:grid-cols-2">
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
-						<input name="nama" value="{{ old('nama') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('nama') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input name="nama" value="{{ old('nama') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('nama') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin <span class="text-red-500">*</span></label>
-						<select name="jk" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('jk') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<select name="jk" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('jk') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 							<option value="">- Pilih -</option>
 							<option value="L" @selected(old('jk')==='L')>Laki-laki</option>
 							<option value="P" @selected(old('jk')==='P')>Perempuan</option>
@@ -56,15 +56,15 @@
 					</div>
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">Tempat Lahir <span class="text-red-500">*</span></label>
-						<input name="tempat_lahir" value="{{ old('tempat_lahir') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('tempat_lahir') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input name="tempat_lahir" value="{{ old('tempat_lahir') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('tempat_lahir') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
-						<input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('tanggal_lahir') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('tanggal_lahir') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 					<div class="sm:col-span-2">
 						<label class="block text-sm font-medium text-gray-700 mb-1">Agama <span class="text-red-500">*</span></label>
-						<select name="agama" class="block w-full max-w-xs rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('agama') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<select name="agama" class="block w-full max-w-sm px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('agama') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 							<option value="">- Pilih Agama -</option>
 							<option value="Islam" @selected(old('agama')==='Islam')>Islam</option>
 							<option value="Kristen" @selected(old('agama')==='Kristen')>Kristen</option>
@@ -78,67 +78,67 @@
 			</div>
 
 			<!-- Data Identitas -->
-			<div class="bg-white rounded-lg border border-gray-200 shadow-sm">
-				<div class="border-b border-gray-200 bg-gray-50 px-4 py-3">
+			<div class="bg-white rounded-xl border-2 border-indigo-200/70 shadow-md ring-2 ring-indigo-300/60 ring-offset-1 ring-offset-white">
+				<div class="border-b border-gray-200 bg-gray-50 px-8 py-5">
 					<h3 class="text-sm font-medium text-gray-900">Data Identitas</h3>
 				</div>
-				<div class="p-4 grid gap-4 sm:grid-cols-3">
+				<div class="p-8 grid gap-6 sm:grid-cols-3">
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">NIPD <span class="text-red-500">*</span></label>
-						<input name="nipd" value="{{ old('nipd') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm font-mono @error('nipd') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input name="nipd" value="{{ old('nipd') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base font-mono @error('nipd') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">NISN <span class="text-red-500">*</span></label>
-						<input name="nisn" value="{{ old('nisn') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm font-mono @error('nisn') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input name="nisn" value="{{ old('nisn') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base font-mono @error('nisn') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">NIK <span class="text-red-500">*</span></label>
-						<input name="nik" value="{{ old('nik') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm font-mono @error('nik') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
+						<input name="nik" value="{{ old('nik') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base font-mono @error('nik') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>
 					</div>
 				</div>
 			</div>
 
 			<!-- Data Alamat -->
-			<div class="bg-white rounded-lg border border-gray-200 shadow-sm">
-				<div class="border-b border-gray-200 bg-gray-50 px-4 py-3">
+			<div class="bg-white rounded-xl border-2 border-indigo-200/70 shadow-md ring-2 ring-indigo-300/60 ring-offset-1 ring-offset-white">
+				<div class="border-b border-gray-200 bg-gray-50 px-8 py-5">
 					<h3 class="text-sm font-medium text-gray-900">Data Alamat</h3>
 				</div>
-				<div class="p-4 space-y-4">
+				<div class="p-8 space-y-6">
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-1">Alamat Lengkap <span class="text-red-500">*</span></label>
-						<textarea name="alamat" rows="2" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('alamat') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>{{ old('alamat') }}</textarea>
+						<textarea name="alamat" rows="2" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('alamat') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror" required>{{ old('alamat') }}</textarea>
 					</div>
-					<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">RT</label>
-							<input name="rt" value="{{ old('rt') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('rt') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="rt" value="{{ old('rt') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('rt') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">RW</label>
-							<input name="rw" value="{{ old('rw') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('rw') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="rw" value="{{ old('rw') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('rw') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">Dusun</label>
-							<input name="dusun" value="{{ old('dusun') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('dusun') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="dusun" value="{{ old('dusun') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('dusun') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">Kelurahan</label>
-							<input name="kelurahan" value="{{ old('kelurahan') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('kelurahan') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="kelurahan" value="{{ old('kelurahan') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('kelurahan') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">Kecamatan</label>
-							<input name="kecamatan" value="{{ old('kecamatan') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('kecamatan') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="kecamatan" value="{{ old('kecamatan') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('kecamatan') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 						<div>
 							<label class="block text-sm font-medium text-gray-700 mb-1">Kode Pos</label>
-							<input name="kode_pos" value="{{ old('kode_pos') }}" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm @error('kode_pos') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
+							<input name="kode_pos" value="{{ old('kode_pos') }}" class="block w-full px-3.5 py-2.5 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-base @error('kode_pos') border-red-300 focus:border-red-500 focus:ring-red-500 @enderror">
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Actions -->
-			<div class="flex items-center justify-end gap-3 bg-gray-50 rounded-lg p-4 border border-gray-200">
+			<div class="flex items-center justify-end gap-3 bg-gray-50 rounded-xl p-6 border-2 border-indigo-200/70 ring-2 ring-indigo-300/60 ring-offset-1 ring-offset-white shadow-md">
 				<a href="{{ route('admin.siswa.index') }}" class="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
 					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
